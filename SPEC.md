@@ -75,3 +75,9 @@ npm run build
 ## CI
 
 GitHub ActionsはPull Request作成時とブランチへのpush時に、`npm ci`、`npm test`、`npm run build` を実行する。
+
+## テスト環境への公開
+
+- GitHub Pagesを使い、`https://ynakamori.github.io/CI-TEST/` で公開する。
+- `.github/workflows/deploy.yml` はGitHub Actionsから手動実行する。
+- 公開前にテストとビルドを行い、成功した場合だけ公開する。
