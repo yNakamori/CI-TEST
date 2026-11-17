@@ -89,11 +89,7 @@ function localDate(date = new Date()): string {
   return local.toISOString().slice(0, 10);
 }
 
-export function applyRules(
-  task: Task,
-  rules: TaskRule[],
-  today = localDate(),
-): Task {
+export function applyRules(task: Task, rules: TaskRule[], today = localDate()): Task {
   if (task.status === "done") {
     return { ...task, appliedRuleIds: [] };
   }
@@ -122,7 +118,8 @@ export function createSampleTasks(today = localDate()): Task[] {
     {
       id: "task-1",
       title: "プロダクト要件の最終レビュー",
-      description: "関係者からのフィードバックを反映し、次回リリースに向けた要件を確定する。レビュー後に開発チームへ共有。",
+      description:
+        "関係者からのフィードバックを反映し、次回リリースに向けた要件を確定する。レビュー後に開発チームへ共有。",
       status: "inProgress",
       priority: "medium",
       dueDate: shiftDate(-1),
